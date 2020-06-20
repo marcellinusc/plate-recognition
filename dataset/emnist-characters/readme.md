@@ -1,0 +1,1 @@
+This file contains traning and test set of Extended MNIST Balanced handwritten characters.
