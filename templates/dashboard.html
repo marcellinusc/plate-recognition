@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link class="jsbin" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" />
+        <script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+        <script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.0/jquery-ui.min.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+        <!-- <link rel="stylesheet" href="templates/style.css"> -->
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="//code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" />
+        <meta charset=utf-8 />
+        <title>LPR Dashboard</title>
+    </head>
+    <body>
+        <div class="jumbotron">
+            <div class="container">
+                <h1>License Plate Recognition</h1>
+                <h5>- dashboard -</h5>
+            </div>
+        </div>
+        <div class="container">
+            <div class="container">
+                <!-- <img id="prev-img" src="#" alt="Your Image Here"> -->
+                <canvas id="canvas"></canvas>
+            </div>
+        </div>
+        <div class="container">
+            <form action="{{ url_for('predict') }}" method="POST" enctype="multipart/form-data"></form>
+                <div class="container">
+                    <input class="btn-upload" id="file" type="file" onchange="readURL(this);">
+                </div>
+                <div class="container-line">
+                    <div class="wrapper">
+                        <button class="btn-predict" type="submit">Predict!</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="container">
+            <p class="result-plate" id="result-plate">Your License Plate is {{ result }}</p>
+        </div>
+        <script src="../static/js/script.js"></script>
+        <!-- The core Firebase JS SDK is always required and must be listed first -->
+        <script src="/__/firebase/7.15.3/firebase-app.js"></script>
+
+        <!-- TODO: Add SDKs for Firebase products that you want to use
+            https://firebase.google.com/docs/web/setup#available-libraries -->
+        <script src="/__/firebase/7.15.3/firebase-analytics.js"></script>
+
+        <!-- Add Firebase products that you want to use -->
+        <script src="/__/firebase/7.15.3/firebase-auth.js"></script>
+        <script src="/__/firebase/7.15.3/firebase-firestore.js"></script>
+
+        <!-- Initialize Firebase -->
+        <script src="/__/firebase/init.js"></script>
+    </body>
+    <footer>
+        <div class="container">
+            <!-- <p>Made with <i class="icon ion-heart"></i> by Bangkit-BDGcohort-Group01</p> -->
+            <p class="license">Made with <span class="heart">❤</span> by Bangkit-BDGcohort-Group01</p>
+        </div>
+    </footer>
+</html>
