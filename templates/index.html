@@ -28,16 +28,14 @@
             </div>
         </div>
         <div class="container">
-            <form action="{{ url_for('predict') }}" method="POST" enctype="multipart/form-data"></form>
-                <div class="container">
-                    <input class="btn-upload" id="file" type="file" onchange="readURL(this);">
+            <div class="container">
+                <input class="btn-upload" id="file" type="file" onchange="readURL(this);">
+            </div>
+            <div class="container-line">
+                <div class="wrapperp">
+                    <a href="/predict"><button class="btn-pred ct" type="submit">Predict!</button> </a>
                 </div>
-                <div class="container-line">
-                    <div class="wrapper">
-                        <button class="btn-predict" type="submit">Predict!</button>
-                    </div>
-                </div>
-            </form>
+            </div>
         </div>
         <div class="container">
             <p class="result-plate" id="result-plate">Your License Plate is {{ result }}</p>
